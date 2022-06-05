@@ -123,4 +123,9 @@ public class AdminController {
         int deleted = boardRepository.deleteGuestPwdNullUser();
         return ResponseEntity.ok().body(new CommonResponse<>(deleted));
     }
+    
+    @GetMapping("/game-start")
+    public boolean gameStartController(){
+        return GameService.gameTimer();
+    }
 }
